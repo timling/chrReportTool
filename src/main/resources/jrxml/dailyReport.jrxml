@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="monthReport" pageWidth="595" pageHeight="842" columnWidth="525" leftMargin="35" rightMargin="35" topMargin="46" bottomMargin="50" uuid="39eee21d-9aad-45c3-8e42-5c872fdbfa96">
+	<property name="ireport.zoom" value="1.6105100000000072"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" backcolor="#33FF33"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<field name="workContent" class="java.lang.String"/>
+	<field name="endDate" class="java.lang.String"/>
+	<pageHeader>
+		<band height="29">
+			<staticText>
+				<reportElement uuid="c0b6801e-0438-4799-b3e5-4bee1cb624b6" x="0" y="0" width="525" height="29" forecolor="#0033FF"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="18" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[應用二組 日工作報告]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="88">
+			<staticText>
+				<reportElement uuid="84cd307d-9ea3-41c3-962b-1d01821bfa3d" style="style1" mode="Opaque" x="175" y="0" width="70" height="19" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[分組]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d6956f3c-0bd6-49c7-aaa8-4334304404fe" style="style1" mode="Opaque" x="80" y="0" width="95" height="19" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[財稅處五科]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="788c3435-6f7a-41e3-8c7e-a11c6adeb54c" style="style1" mode="Opaque" x="245" y="0" width="150" height="19" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[國庫署]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1e87499e-6e64-46b0-8c03-5a992db272a8" style="style1" mode="Opaque" x="395" y="0" width="60" height="19" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[姓名]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cc66cc21-163a-4a5e-8e17-1a17ed4e7e69" style="style1" mode="Opaque" x="0" y="0" width="80" height="19" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[單  位  別]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="0f8c6b3e-c969-4e61-ba69-ef8db3a2f718" style="style1" mode="Opaque" x="455" y="0" width="70" height="19" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box topPadding="3" leftPadding="3">
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d2643365-4a16-4da5-bdb5-2045cf6d6c38" style="style1" mode="Opaque" x="0" y="19" width="80" height="19" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[日      期]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0757f39c-31e7-4474-9aa0-abe59c4f25a3" style="style1" mode="Opaque" x="0" y="38" width="30" height="50" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[序號]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d7bfd962-f607-4a8a-85c5-6e9c25bad84b" style="style1" mode="Opaque" x="30" y="38" width="50" height="50" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[WBS編號]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="f5bcefd1-72de-4630-ba9c-31e40140ad71" style="style1" mode="Opaque" x="80" y="19" width="445" height="19" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box topPadding="3" leftPadding="3">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b899362d-434d-4ca2-84dc-b8f3e3adc17f" style="style1" mode="Opaque" x="80" y="38" width="165" height="50" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[工    作    內    容]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6566c29c-3479-4881-8305-f2b98ced0ed3" style="style1" mode="Opaque" x="245" y="38" width="150" height="50" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[預定完成日/
+執行情形
+(落後/如期/超前)
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9f0a1943-d673-4298-8780-6047faa6be76" style="style1" mode="Opaque" x="395" y="38" width="130" height="50" forecolor="#000000" backcolor="#E7F6E7"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[困難與議題
+(需主管協助解決問題)
+]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="efe74087-20de-4819-83cb-7b005f60ac39" x="0" y="0" width="30" height="25"/>
+				<box topPadding="3">
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="ae2a54a0-0576-4598-ad9f-6577c1efb92d" x="30" y="0" width="50" height="25"/>
+				<box topPadding="3" leftPadding="3">
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="bc82703b-c595-471a-ad77-5710df6a587c" x="80" y="0" width="165" height="25"/>
+				<box topPadding="3" leftPadding="3">
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{workContent}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="963a524f-b362-4cba-8c60-0eb4e03ef62a" x="245" y="0" width="150" height="25"/>
+				<box topPadding="3" leftPadding="3">
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endDate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="db87b755-494b-4776-9980-fbd212aa3b63" x="395" y="0" width="130" height="25"/>
+				<box topPadding="3" leftPadding="3">
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="1">
+			<line>
+				<reportElement uuid="0ddf79ac-023c-4d62-bc51-0616b12a4c82" x="0" y="0" width="525" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
