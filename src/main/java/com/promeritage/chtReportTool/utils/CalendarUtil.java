@@ -32,8 +32,8 @@ public class CalendarUtil {
                 setCalendarUrls(service, proUser);
             }
         } catch (AuthenticationException e) {
-            System.err.println("帳號密碼錯誤");
-            throw e;
+            e.printStackTrace();
+            throw new RuntimeException(e.getMessage());
         }
         return service;
     }

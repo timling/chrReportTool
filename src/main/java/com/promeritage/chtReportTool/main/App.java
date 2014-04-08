@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.Date;
+import java.util.Properties;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -26,6 +27,7 @@ import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 
 import com.promeritage.chtReportTool.dto.ProUser;
+import com.promeritage.chtReportTool.utils.PropertiesUtil;
 import com.promeritage.chtReportTool.utils.UserUtil;
 
 public class App extends JPanel {
@@ -48,8 +50,9 @@ public class App extends JPanel {
                 "請先在 https://www.google.com/calendar/render?tab=mc 設定工作內容");
         tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
 
-        ProUser user = UserUtil.getUser();
-        if ("tim.ling@promeritage.com.tw".equals(user.getEmail())) {
+        Properties properties = PropertiesUtil
+                .loadOrCreateProperties(PropertiesUtil.POPERTIES_NAME);
+        if ("tim.ling@promeritage.com.tw".equals(properties.getProperty("email"))) {
             JComponent panel3 = makeTab3();
             tabbedPane.addTab("月請假紀錄", icon, panel3,
                     "請先在 https://www.google.com/calendar/render?tab=mc 設定工作內容");

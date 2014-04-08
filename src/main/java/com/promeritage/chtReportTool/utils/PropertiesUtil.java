@@ -58,7 +58,7 @@ public class PropertiesUtil {
             out.append("name=").append(sep);
             out.append("pmName=").append(sep);
 
-            out.append("proxySet=true").append(sep);
+            out.append("proxySet=false").append(sep);
             out.append("proxyHost=10.160.3.88").append(sep);
             out.append("proxyPort=8080").append(sep);
 
