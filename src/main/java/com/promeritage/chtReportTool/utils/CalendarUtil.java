@@ -25,16 +25,19 @@ public class CalendarUtil {
     private static CalendarService service = null;
 
     public static CalendarService getService(ProUser proUser) throws AuthenticationException {
-        try {
-            if (service == null) {
-                service = new CalendarService("My Application");
-                service.setUserCredentials(proUser.getEmail(), proUser.getPassword());
-                setCalendarUrls(service, proUser);
-            }
-        } catch (AuthenticationException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e.getMessage());
+        if (service == null) {
+            service = new CalendarService("My Application");
         }
+        String email = proUser.getEmail();
+        String password = proUser.getPassword();
+        if (email == null || email.trim().isEmpty()) {
+            throw new RuntimeException("email 不能為空");
+        }
+        if (password == null || password.trim().isEmpty()) {
+            throw new RuntimeException("password 不能為空");
+        }
+        service.setUserCredentials(email, password);
+        setCalendarUrls(service, proUser);
         return service;
     }
 

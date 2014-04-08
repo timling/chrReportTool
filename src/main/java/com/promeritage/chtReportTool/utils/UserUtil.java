@@ -3,7 +3,6 @@ package com.promeritage.chtReportTool.utils;
 import java.util.Properties;
 
 import com.google.gdata.client.calendar.CalendarService;
-import com.google.gdata.util.AuthenticationException;
 import com.promeritage.chtReportTool.dto.ProUser;
 
 public class UserUtil {
@@ -28,8 +27,9 @@ public class UserUtil {
             try {
                 CalendarService service = CalendarUtil.getService(proUser);
                 CalendarUtil.setCalendarUrls(service, proUser);
-            } catch (AuthenticationException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+                proUser = null;
+                throw new RuntimeException(e.getMessage());
             }
         }
         return proUser;
