@@ -26,9 +26,7 @@ import org.jdesktop.swingx.JXDatePicker;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 
-import com.promeritage.chtReportTool.dto.ProUser;
 import com.promeritage.chtReportTool.utils.PropertiesUtil;
-import com.promeritage.chtReportTool.utils.UserUtil;
 
 public class App extends JPanel {
     private static final long serialVersionUID = 1L;
