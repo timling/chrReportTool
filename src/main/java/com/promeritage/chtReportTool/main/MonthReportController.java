@@ -3,6 +3,7 @@ package com.promeritage.chtReportTool.main;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -45,19 +46,46 @@ public class MonthReportController {
 
         Collections.sort(workList, new Comparator<JobDto>() {
             public int compare(JobDto o1, JobDto o2) {
+                int result = o1.getWorkContent().compareTo(o2.getWorkContent());
+                if (result == 0) {
+                    result = o1.getStartDate().compareTo(o2.getStartDate());
+                }
+                return result;
+            }
+        });
+        List<JobDto> cinfigWorkList = new ArrayList<JobDto>();
+        JobDto tmpJobDto = workList.get(0);
+        for (JobDto jobDto : workList) {
+            String workContent = jobDto.getWorkContent();
+            String tmpWorkContent = tmpJobDto.getWorkContent();
+            if (workContent.equals(tmpWorkContent)) {
+                jobDto.setStartDate(tmpJobDto.getStartDate());
+            } else {
+                cinfigWorkList.add(tmpJobDto);
+            }
+            tmpJobDto = jobDto;
+        }
+        cinfigWorkList.add(tmpJobDto);
+
+        Collections.sort(cinfigWorkList, new Comparator<JobDto>() {
+            public int compare(JobDto o1, JobDto o2) {
                 return o1.getStartDate().compareTo(o2.getStartDate());
             }
         });
 
-        int size = 25 - (workList.size() % 25);
-        for (int i = 0; i < size; i++) {
-            workList.add(new JobDto());
+        int rowPerPage = 30;
+        int size = cinfigWorkList.size();
+        int mod = size % rowPerPage;
+        if (mod != 0) {
+            for (int i = 0; i < rowPerPage - mod; i++) {
+                cinfigWorkList.add(new JobDto());
+            }
         }
 
         int group = 0;
         int i = 0;
-        for (JobDto jobDto : workList) {
-            if (i % 25 == 0) {
+        for (JobDto jobDto : cinfigWorkList) {
+            if (i % rowPerPage == 0) {
                 group++;
             }
             jobDto.setGroup(String.valueOf(group));
@@ -79,7 +107,7 @@ public class MonthReportController {
 
         JasperReport jasperReport = JasperCompileManager.compileReport(is);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters,
-                new JRBeanCollectionDataSource(workList));
+                new JRBeanCollectionDataSource(cinfigWorkList));
         File file = new File(
                 String.format("%s_%s_工作進度審查表_%s.docx", startDate.toString("yyyy-MM-dd"),
                         endDate.toString("yyyy-MM-dd"), proUser.getName()));

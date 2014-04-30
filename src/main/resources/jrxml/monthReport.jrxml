@@ -160,10 +160,11 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="25" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<textField>
-				<reportElement uuid="efe74087-20de-4819-83cb-7b005f60ac39" x="0" y="0" width="30" height="25"/>
+				<reportElement uuid="efe74087-20de-4819-83cb-7b005f60ac39" x="0" y="0" width="30" height="20"/>
 				<box topPadding="0">
+					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.5"/>
 					<rightPen lineWidth="0.5"/>
 				</box>
@@ -173,7 +174,7 @@
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement uuid="ae2a54a0-0576-4598-ad9f-6577c1efb92d" x="30" y="0" width="145" height="25"/>
+				<reportElement uuid="ae2a54a0-0576-4598-ad9f-6577c1efb92d" x="30" y="0" width="145" height="20"/>
 				<box topPadding="0">
 					<bottomPen lineWidth="0.5"/>
 					<rightPen lineWidth="0.5"/>
@@ -184,7 +185,7 @@
 				<textFieldExpression><![CDATA[$F{workContent}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement uuid="bc82703b-c595-471a-ad77-5710df6a587c" x="175" y="0" width="70" height="25"/>
+				<reportElement uuid="bc82703b-c595-471a-ad77-5710df6a587c" x="175" y="0" width="70" height="20"/>
 				<box topPadding="0">
 					<bottomPen lineWidth="0.5"/>
 					<rightPen lineWidth="0.5"/>
@@ -195,7 +196,7 @@
 				<textFieldExpression><![CDATA[$F{startDate}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement uuid="963a524f-b362-4cba-8c60-0eb4e03ef62a" x="245" y="0" width="70" height="25"/>
+				<reportElement uuid="963a524f-b362-4cba-8c60-0eb4e03ef62a" x="245" y="0" width="70" height="20"/>
 				<box topPadding="0">
 					<bottomPen lineWidth="0.5"/>
 					<rightPen lineWidth="0.5"/>
@@ -206,7 +207,7 @@
 				<textFieldExpression><![CDATA[$F{endDate}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement uuid="7989a46a-10cc-4255-8194-3e1f4b335696" x="315" y="0" width="70" height="25"/>
+				<reportElement uuid="7989a46a-10cc-4255-8194-3e1f4b335696" x="315" y="0" width="70" height="20"/>
 				<box topPadding="0">
 					<bottomPen lineWidth="0.5"/>
 					<rightPen lineWidth="0.5"/>
@@ -217,7 +218,7 @@
 				<textFieldExpression><![CDATA[$F{endDate}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement uuid="1982a0db-c754-43a0-9414-d4bf175615d8" x="385" y="0" width="70" height="25"/>
+				<reportElement uuid="1982a0db-c754-43a0-9414-d4bf175615d8" x="385" y="0" width="70" height="20"/>
 				<box topPadding="0">
 					<bottomPen lineWidth="0.5"/>
 					<rightPen lineWidth="0.5"/>
@@ -228,7 +229,7 @@
 				<textFieldExpression><![CDATA[$F{myName}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement uuid="db87b755-494b-4776-9980-fbd212aa3b63" x="455" y="0" width="70" height="25"/>
+				<reportElement uuid="db87b755-494b-4776-9980-fbd212aa3b63" x="455" y="0" width="70" height="20"/>
 				<box topPadding="0">
 					<bottomPen lineWidth="0.5"/>
 					<rightPen lineWidth="0.5"/>

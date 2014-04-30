@@ -28,6 +28,7 @@ public class UserUtil {
                 CalendarService service = CalendarUtil.getService(proUser);
                 CalendarUtil.setCalendarUrls(service, proUser);
             } catch (Exception e) {
+                e.printStackTrace();
                 proUser = null;
                 throw new RuntimeException(e.getMessage());
             }

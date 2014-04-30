@@ -25,7 +25,7 @@ public class MonthVacationController {
             ServiceException {
 
         LocalDateTime now = LocalDateTime.now();
-        now = now.withMonthOfYear(3);
+//        now = now.withMonthOfYear(3);
         sendVacationLog(now.dayOfMonth().withMinimumValue(), now.dayOfMonth().withMaximumValue());
 
     }
@@ -46,6 +46,7 @@ public class MonthVacationController {
         String password = proUser.getPassword();
         String subject = String.format("%s ~ %s 假時統計", startDay, endDay);
         SendMailUtil.send(proUser.getEmail(), password, proUser.getHrMailAddr(), subject, msg);
+//        SendMailUtil.send(proUser.getEmail(), password, proUser.getEmail(), subject, msg); // for test
     }
 
     private static String configMailMsg(List<PersonalWorkDto> personalWorkDtoList) {
